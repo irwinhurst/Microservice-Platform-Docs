@@ -1,0 +1,12 @@
+<Release Date="11/6/2018" Label="alpha" Location="https://github.com/irwinhurst/Microservice-Platform-Docs/releases/tag/alpha">
+<Services>
+    <Service>
+        <Name>Cart Service</Name>
+        <Path>cart/cartservice.info.xml</Path>
+    </Service>
+    <Service>
+        <Name>Warehouse Service</Name>
+        <Path>warehouse/warehouseservice.info.xml</Path>
+    </Service>
+</Services>
+</Release>

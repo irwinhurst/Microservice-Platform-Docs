@@ -1,0 +1,41 @@
+<Info>
+<Name>Cart Service</Name>
+<Iterations>
+    <Iteration StartDate="11/10/2018" EndDate="11/16/2018" Name="Beta" Location="https://github.com/irwinhurst/Microservice-Platform-Docs/releases/tag/alpha"/>
+    <Iteration StartDate="11/1/2018" EndDate="11/6/2018" Name="alpha" Location="https://github.com/irwinhurst/Microservice-Platform-Docs/releases/tag/alpha"/>
+<Iterations>
+<Documentation>
+    <Description>The cart service provides an API to allow for any website to manage products in a cart.</Description>
+    <Backlog Location="https://github.com/irwinhurst/Microservice-Platform-Docs/issues"></Backlog>
+    <Source Location="https://github.com/irwinhurst/Microservice-Platform-Docs">
+    <Domains>
+        <Domain>Cart</Domain>
+    </Domains>
+</Documentation>
+
+<Interface>
+    <API>path to swagger</API>
+    <Publishes>
+        <Message>ItemAddedEvent</Message>
+        <Message>ItemDeletedEvent</Message>
+    </Publishes>
+    <Subscribes>
+        <Message>UserLoggedOut</Message>
+    </Subscribes>
+    <CommandHandlers>
+        <Message>ClearCartCommand</Message>
+    </CommandHandlers>
+</Interface>
+<Databases>
+    <Database Name="Product" Schema="Cart" Location="" ></Database>
+</Databases>
+<Configuration>
+    <Config Type="File" Name="cart.config"/>
+</Configuration>
+<Dependencies>
+    <Resource Name="Redis" Type="Thirdparty"/>
+    <Resource Name="Paypal" Type="RPC"/>
+    <Resource Name="CreateOrderCommand" Type="Message"/>
+    <Resource Name="" Type="File"/>
+</Dependencies>
+</Info>

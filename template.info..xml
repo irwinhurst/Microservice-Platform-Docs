@@ -1,0 +1,36 @@
+<Info>
+<Name></Name>
+<Source Name="" Location="">
+<Documentation/>
+<Description></Description>
+<Domains>
+    <Domain></Domain>
+</Domains>
+<Backlog></Backlog>
+<Source></Source>
+<Interface>
+<API>path to swagger</API>
+<Publishes>
+    <Message></Message>
+</Publishes>
+<Subscribes>
+    <Message></Message>
+</Subscribes>
+<CommandHandlers>
+    <Message></Message>
+</CommandHandlers>
+<Databases>
+    <Database Name="" Schema="" Location="" ></Database>
+</Databases>
+</Interface>
+<Configuration>
+    <Config Type="File" Name="" Location=""/>
+    <Config Type="File" Name="" Location=""/>
+</Configuration>
+<Dependencies>
+    <Resource Name="" Type="Thirdparty"/>
+    <Resource Name="" Type="RPC"/>
+    <Resource Name="" Type="Message"/>
+    <Resource Name="" Type="File"/>
+</Dependencies>
+</Info>

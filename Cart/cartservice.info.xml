@@ -1,13 +1,15 @@
-<Info>
+<?xml version="1.0" encoding="utf-8"?>
+<Info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
 <Name>Cart Service</Name>
 <Iterations>
     <Iteration StartDate="11/10/2018" EndDate="11/16/2018" Name="Beta" Location="https://github.com/irwinhurst/Microservice-Platform-Docs/releases/tag/alpha"/>
     <Iteration StartDate="11/1/2018" EndDate="11/6/2018" Name="alpha" Location="https://github.com/irwinhurst/Microservice-Platform-Docs/releases/tag/alpha"/>
-<Iterations>
+</Iterations>
 <Documentation>
     <Description>The cart service provides an API to allow for any website to manage products in a cart.</Description>
     <Backlog Location="https://github.com/irwinhurst/Microservice-Platform-Docs/issues"></Backlog>
-    <Source Location="https://github.com/irwinhurst/Microservice-Platform-Docs">
+    <Source Location="https://github.com/irwinhurst/Microservice-Platform-Docs"/>
     <Domains>
         <Domain>Cart</Domain>
     </Domains>

@@ -1,13 +1,14 @@
-<Info>
-<Name>Warehouse Service</Name>
+<?xml version="1.0" encoding="utf-8"?>
+<Info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <Name>Warehouse Service</Name>
 <Iterations>
     <Iteration StartDate="11/10/2018" EndDate="11/16/2018" Name="Beta" Location="https://github.com/irwinhurst/Microservice-Platform-Docs/releases/tag/alpha"/>
     <Iteration StartDate="11/1/2018" EndDate="11/6/2018" Name="alpha" Location="https://github.com/irwinhurst/Microservice-Platform-Docs/releases/tag/alpha"/>
-<Iterations>
+</Iterations>
 <Documentation>
     <Description>The warehouse service handles placing and orders, inventory and shipping products</Description>
     <Backlog Location="https://github.com/irwinhurst/Microservice-Platform-Docs/issues"></Backlog>
-    <Source Location="https://github.com/irwinhurst/Microservice-Platform-Docs">
+    <Source Location="https://github.com/irwinhurst/Microservice-Platform-Docs"/>
     <Domains>
         <Domain>Order</Domain>
         <Domain>Shipping</Domain>

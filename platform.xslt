@@ -97,73 +97,36 @@
             </ul>
           </div>
         </nav>
-
+    <!-- TITLE -->
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Platofrm Release 2.0</h1>
+            <h1 class="h2">
+                <xsl:value-of select="/Release/@Name"/>
+                <small class="text-muted">  Date:<xsl:value-of select="/Release/@Date"/>  Label:<xsl:value-of select="/Release/@Label"/></small>
+            </h1>
             
           </div>
     
-    <div class="row">
-          <div class="col-sm-4" style="display: flex;padding-bottom: 5px;padding-top: 5px;">
-            <div class="card border-dark shadow">
-                <div class="card-body">
-                    <h5 class="card-title">Microservice name</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    
-                </div>
+            <!-- SERVICE CARDS -->
+            <div class="row">
+                <xsl:for-each select="/Release/Services/Service">
+                    <xsl:call-template name="ServiceCard">
+                    <xsl:with-param name="serviceInfo" select="document(Path)" />
+                    <xsl:with-param name="serviceName" select="Name" />
+                    </xsl:call-template>
+                </xsl:for-each>
             </div>  
-          </div>
-
-          <div class="col-sm-4" style="display: flex;padding-bottom: 5px;padding-top: 5px;">
-            <div class="card border-dark shadow">
-                <div class="card-body">
-                    <h5 class="card-title">Microservice name</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    
-                </div>
-            </div>  
-          </div>
-
-        <div class="col-sm-4" style="display: flex;padding-bottom: 5px;padding-top: 5px;">
-              <div class="card border-dark shadow">
-                <div class="card-body">
-                    <h5 class="card-title">Microservice name</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    
-                </div>
-            </div>  
-          </div>
-
-        <div class="col-sm-4" style="display: flex;padding-bottom: 5px;padding-top: 5px;">
-              <div class="card border-dark shadow">
-                <div class="card-body">
-                    <h5 class="card-title">Microservice name</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    
-                </div>
-            </div>  
-          </div>
-
-
-        <div class="col-sm-4" style="display: flex;padding-bottom: 5px;padding-top: 5px;">
-              <div class="card border-dark shadow">
-                <div class="card-body">
-                    <h5 class="card-title">Microservice name</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    
-                </div>
-            </div>  
-          </div>
-         </div>  
-          
-         <xsl:call-template name="ServiceCard"/>
-          
+            <br/> 
+            
+                <xsl:for-each select="/Release/Services/Service">
+                    <div class="row">
+                    <xsl:call-template name="ServiceCanvas">
+                        <xsl:with-param name="serviceInfo" select="document(Path)" />
+                    </xsl:call-template>
+                    </div>    
+                </xsl:for-each>
+            
+            
         </main>
       </div>
     </div>
@@ -174,6 +137,30 @@
     <script src="http://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
-
 </xsl:template>
+
+
+ <xsl:template name="ServiceCard">
+    <xsl:param name="serviceInfo" />
+    <xsl:param name="serviceName" />
+
+    <div class="col-sm-4" style="display: flex;padding-bottom: 5px;padding-top: 5px;">
+        <div class="card border-dark shadow">
+            <div class="card-body">
+                <h5 class="card-title"><xsl:value-of select="$serviceName"/>
+                <small class="text-muted"><text> - </text>
+                    <xsl:value-of select="$serviceInfo/Info/Iterations/Iteration[1]/@Name"/>
+                </small>
+                </h5>
+                <p class="card-text">
+                            <xsl:value-of select="$serviceInfo/Info/Documentation/Description"/>
+                </p>             
+            </div>
+        </div>  
+    </div>
+</xsl:template>
+
+
+
+
 </xsl:stylesheet>

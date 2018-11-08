@@ -1,31 +1,34 @@
 <Info>
 <Name></Name>
-<Source Name="" Location="">
-<Documentation/>
-<Description></Description>
-<Domains>
-    <Domain></Domain>
-</Domains>
-<Backlog></Backlog>
-<Source></Source>
+<Iterations>
+    <Iteration StartDate="" EndDate="" Name="" Location=""/>
+<Iterations>
+<Documentation>
+    <Description></Description>
+    <Backlog Location=""></Backlog>
+    <Source Location="">
+    <Domains>
+        <Domain></Domain>
+    </Domains>
+</Documentation>
+
 <Interface>
-<API>path to swagger</API>
-<Publishes>
-    <Message></Message>
-</Publishes>
-<Subscribes>
-    <Message></Message>
-</Subscribes>
-<CommandHandlers>
-    <Message></Message>
-</CommandHandlers>
+    <API>path to swagger</API>
+    <Publishes>
+        <Message></Message>
+    </Publishes>
+    <Subscribes>
+        <Message></Message>
+    </Subscribes>
+    <CommandHandlers>
+        <Message></Message>
+    </CommandHandlers>
+</Interface>
 <Databases>
     <Database Name="" Schema="" Location="" ></Database>
 </Databases>
-</Interface>
 <Configuration>
-    <Config Type="File" Name="" Location=""/>
-    <Config Type="File" Name="" Location=""/>
+    <Config Type="File" Name=""/>
 </Configuration>
 <Dependencies>
     <Resource Name="" Type="Thirdparty"/>

@@ -3,6 +3,7 @@
 <xsl:include href="Canvas.xslt"/>
   <xsl:output method="html"/>
 
-<xsl:call-template name="ServiceCard"/>
-
+<xsl:call-template name="ServiceCard">
+    <xsl:with-param name="serviceInfo" select="document(Path)" />
+</xsl:call-template>
 </xsl:stylesheet>

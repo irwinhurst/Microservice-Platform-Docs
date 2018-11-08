@@ -12,29 +12,28 @@ https://dzone.com/articles/a-readme-for-your-microservice-github-repository
 4. Fill in the details for you release.xml and for each service, add a name and the path to all info.xml files.
 5. From the parent folder where you created your release.xml file, execute a tranform to generate the release.html file
 Command Line
+```
 C:\Program Files\Saxonica\SaxonHE9.8N\bin\transform -s:release.xml -xsl:canvas.xslt -o:release.html
-
-transform -s:C:\Users\ihurst\source\repos\Microservice-Platform-Docs\release.xml -xsl:C:\Users\ihurst\source\repos\Microservice-Platform-Docs\canvas.xslt -o:release.html
-
-
+```
 
 
 
 | Field  | Description |
 | ------------- | ------------- |
-|Name:                  |    The name of your serice          |
+|Name:                  |    The name of your service          |
+|Iteration:            |    A link to the current iteration you are working on.  When pushed with a release this is the released iteration          |
+|**Documentation:**    These fields are used to document or link to the business documentation and requirements          |
 |Description:           |    A business description of your service and its features          |
+|Backlog:               |   A link to your backlog           |
+|Source:                |   A link to the location of your source control           |
 |Owner:                 |    Ussually a team lead or the team name if you have one. This is the main point of contact for more information.          |
 |Domains:               |   In an ideal world each microservice controls a single domain. However in the real world a service can be a hybrid or a legacy monolith that responsible for multiple domains.           |
-|Backlog:               |   A link to your backlog           |
-|Iteration:            |    A link to the current iteration you are working on.  When pushed with a release this is the released iteration          |
-|Source:                |   A link to the location of your source control           |
-|Interface:                The next few feilds help document the public face of your service           |
+| **Interface:**                The next few feilds help document the public face of your service           |
 |API:                 |     A link to your swagger file or other type of documentation         |
 |Publishes:             |   A list of messages that your service publishes           |
 |Subscribes:            |   A list of messages that your service subscribes to           |
 |CommandHandlers:       |   A list of command messages that your service handles           |
-|Databases:             |   This area help keep track of the databases required for your application. Things like a "logging: database can be documented here or as a dependency.          |
+|**Databases:**             This area help keep track of the databases required for your application. Things like a "logging: database can be documented here or as a dependency.          |
 |Name:                  | The name of your database              |
 |Schema:                | The name of your schema if you are using schema isolation in your services             |
 |Location:              | A link to the source control for your database, not a connection string./             |

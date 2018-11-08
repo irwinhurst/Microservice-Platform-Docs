@@ -37,6 +37,8 @@ C:\Program Files\Saxonica\SaxonHE9.8N\bin\transform -s:release.xml -xsl:canvas.x
 |Name:                  | The name of your database              |
 |Schema:                | The name of your schema if you are using schema isolation in your services             |
 |Location:              | A link to the source control for your database, not a connection string./             |
-|Configuration:         | Any configuration information needed by your service such as files, connection names, licenses, etc             |
-|Dependencies:          | This is a critical section that documents the run time dependencies of your service.  Any remote service calls, or external databases such as logging or auditing, Redis, etc. Anything that will stop your service from working if it isn't available.  Sometimes even sending a Command Message can be a dependency if the service is expecting a response.           |
+|**Configuration:**         | This section documentation any configuration information needed by your service such as files, connection names, licenses, etc. Needed when setting up deployments.             |
+|Config:                  | A single config resource with a name and type             |
+|**Dependencies:**          | This is a critical section that documents the run time dependencies of your service.  Any remote service calls, or external databases such as logging or auditing, Redis, etc. Anything that will stop your service from working if it isn't available.  Sometimes even sending a Command Message can be a dependency if the service is expecting a response.           |
+|Resource:                  | A single dependency with a name and a type              |
 

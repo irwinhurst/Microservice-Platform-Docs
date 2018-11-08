@@ -1,12 +1,10 @@
 # Microservice-Platform-Docs
-An XML and style sheet to document all the microservices in your platform.
+A set of XML files and style sheets to document all the microservices in your platform.
 
 ## Inspired by these articles
 https://dzone.com/articles/streamlined-microservice-design-in-practice
 
 https://dzone.com/articles/a-readme-for-your-microservice-github-repository
-
-
 
 ## Example
 http://htmlpreview.github.io/?https://github.com/irwinhurst/Microservice-Platform-Docs/blob/master/release.html
@@ -14,10 +12,10 @@ http://htmlpreview.github.io/?https://github.com/irwinhurst/Microservice-Platfor
 
 
 ## Directions:
-1. Copy the template.info.xml file into the root folder of each service.  
-2. Rename it based on your service such as cartservice.info.xml
+1. Make a copy the **template.info.xml** file into the root folder of each service.  This is where you will fill in the details of your service.
+2. Rename the file and replace template with the name of your service. For example: cartservice.info.xml
 3. Copy all the canvas.xslt, service.xslt, release.xslt and release.xml, to the parent folder above all of your services. Or to your release folder.
-4. Fill in the details for you release.xml and for each service, add a name and the path to all info.xml files.
+4. The **release.xml** file is where you will document the high level information about a full platform release. It will also include a list of all the services you are including in your release.
 5. From the parent folder where you created your release.xml file, execute a tranform to generate the release.html file
 Command Line
 ```

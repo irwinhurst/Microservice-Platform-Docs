@@ -29,7 +29,7 @@ transform -s:C:\Users\ihurst\source\repos\Microservice-Platform-Docs\release.xml
 |Backlog:               |   A link to your backlog           |
 |Iteration:            |    A link to the current iteration you are working on.  When pushed with a release this is the released iteration          |
 |Source:                |   A link to the location of your source control           |
-|Interface:             |   The next few feilds help document the public face of your service           |
+|Interface:                The next few feilds help document the public face of your service           |
 |API:                 |     A link to your swagger file or other type of documentation         |
 |Publishes:             |   A list of messages that your service publishes           |
 |Subscribes:            |   A list of messages that your service subscribes to           |

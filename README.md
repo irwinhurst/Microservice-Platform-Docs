@@ -1,8 +1,16 @@
 # Microservice-Platform-Docs
 An XML and style sheet to document all the microservices in your platform.
+
+## Inspired by these articles
 https://dzone.com/articles/streamlined-microservice-design-in-practice
 
 https://dzone.com/articles/a-readme-for-your-microservice-github-repository
+
+
+
+## Example
+http://htmlpreview.github.io/?https://github.com/irwinhurst/Microservice-Platform-Docs/blob/master/release.html
+
 
 
 ## Directions:
@@ -18,7 +26,7 @@ C:\Program Files\Saxonica\SaxonHE9.8N\bin\transform -s:release.xml -xsl:canvas.x
 
 
 
-| Field  | Description |
+| **Field**  | **Description** |
 | ------------- | ------------- |
 |Name:                  |    The name of your service          |
 |Iteration:            |    A link to the current iteration you are working on.  When pushed with a release this is the released iteration          |

@@ -17,48 +17,7 @@ C:\Program Files\Saxonica\SaxonHE9.8N\bin\transform -s:release.xml -xsl:canvas.x
 transform -s:C:\Users\ihurst\source\repos\Microservice-Platform-Docs\release.xml -xsl:C:\Users\ihurst\source\repos\Microservice-Platform-Docs\canvas.xslt -o:release.html
 
 
-| Field  | Description |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
 
-Name:
-Description:
-Owner:
-Domains:
-Backlog:
-Interation:
-Source:
-Interface:
-API:
-Publishes:
-Subscribes:
-CommandHandlers:
-Databases:
-Name:
-Schema:
-Location:
-
-Configuration:
-
-Dependencies:
-# Microservice-Platform-Docs
-An XML and style sheet to document all the microservices in your platform.
-https://dzone.com/articles/streamlined-microservice-design-in-practice
-
-https://dzone.com/articles/a-readme-for-your-microservice-github-repository
-
-
-## Directions:
-1. Copy the template.info.xml file into the root folder of each service.  
-2. Rename it based on your service such as cartservice.info.xml
-3. Copy all the canvas.xslt, service.xslt, release.xslt and release.xml, to the parent folder above all of your services. Or to your release folder.
-4. Fill in the details for you release.xml and for each service, add a name and the path to all info.xml files.
-5. From the parent folder where you created your release.xml file, execute a tranform to generate the release.html file
-Command Line
-C:\Program Files\Saxonica\SaxonHE9.8N\bin\transform -s:release.xml -xsl:canvas.xslt -o:release.html
-
-transform -s:C:\Users\ihurst\source\repos\Microservice-Platform-Docs\release.xml -xsl:C:\Users\ihurst\source\repos\Microservice-Platform-Docs\canvas.xslt -o:release.html
 
 
 | Field  | Description |

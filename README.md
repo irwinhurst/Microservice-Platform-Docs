@@ -1,5 +1,5 @@
 # Microservice-Platform-Docs
-A set of XML files and style sheets to document all the microservices in your platform.
+A set of XML files and style sheets to document all the microservices in your platform.  The info.xml file is meant to document a single service and it is best to keep it in the root directory with your source code.  The release.xml file pulls all of the info files together into complete documentation of your entire platform.
 
 ## Inspired by these articles
 https://dzone.com/articles/streamlined-microservice-design-in-practice

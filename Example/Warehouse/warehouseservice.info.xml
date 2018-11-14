@@ -8,7 +8,7 @@
 <Documentation>
     <Description>The warehouse service handles placing and orders, inventory and shipping products</Description>
     <Backlog Location="https://github.com/irwinhurst/Microservice-Platform-Docs/issues"></Backlog>
-    <Source Location="https://github.com/irwinhurst/Microservice-Platform-Docs"/>
+    <Source Location="https://github.com/irwinhurst/Microservice-Platform-Docs/tree/master/Example/Warehouse"/>
     <Domains>
         <Domain>Order</Domain>
         <Domain>Shipping</Domain>
@@ -39,6 +39,6 @@
 <Dependencies>
     <Resource Name="Redis" Type="Thirdparty"/>
     <Resource Name="Paypal" Type="RPC"/>
-    <Resource Name="" Type="File"/>
+    <Resource Name="Logging" Type="Database"/>
 </Dependencies>
 </Info>

@@ -34,70 +34,30 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="file"></span>
-                  Orders
+                  Service Details
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#alldatabases">
                   <span data-feather="shopping-cart"></span>
-                  Products
+                  Databases
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#allpublishers">
                   <span data-feather="users"></span>
-                  Customers
+                  Messages
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="bar-chart-2"></span>
-                  Reports
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="layers"></span>
-                  Integrations
-                </a>
-              </li>
+              
             </ul>
 
-            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-              <span>Saved reports</span>
-              <a class="d-flex align-items-center text-muted" href="#">
-                <span data-feather="plus-circle"></span>
-              </a>
-            </h6>
-            <ul class="nav flex-column mb-2">
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Current month
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Last quarter
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Social engagement
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Year-end sale
-                </a>
-              </li>
-            </ul>
+            
           </div>
         </nav>
     <!-- TITLE -->
+    
+
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2">
@@ -106,18 +66,19 @@
             </h1>
             
           </div>
-    
+    <h2>Services</h2>
             <!-- SERVICE CARDS -->
             <div class="row">
                 <xsl:for-each select="/Release/Services/Service">
+                  <xsl:variable name="serviceInfo" select="document(Path)"></xsl:variable>
                     <xsl:call-template name="ServiceCard">
-                    <xsl:with-param name="serviceInfo" select="document(Path)" />
+                    <xsl:with-param name="serviceInfo" select="$serviceInfo" />
                     <xsl:with-param name="serviceName" select="Name" />
                     </xsl:call-template>
                 </xsl:for-each>
             </div>  
             <br/> 
-            
+            <h2>Service Details</h2>
                 <xsl:for-each select="/Release/Services/Service">
                     <div class="row">
                     <xsl:call-template name="ServiceCanvas">
@@ -125,15 +86,19 @@
                     </xsl:call-template>
                     </div>    
                 </xsl:for-each>
+            <div class="row">
+                <xsl:call-template name="DatabaseSection"></xsl:call-template>
+             </div>    
+            <div class="row">
+                <xsl:call-template name="AllPublishers"></xsl:call-template>
+             </div>    
+               
             
             
         </main>
       </div>
     </div>
 
- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <![CDATA[<script>window.jQuery || document.write('<script src="http://getbootstrap.com/docs/4.1/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>]]>
-    <script src="http://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>
     <script src="http://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
@@ -160,6 +125,97 @@
     </div>
 </xsl:template>
 
+
+<xsl:template name="DatabaseSection">
+  <a id="alldatabases">
+      <h2>All Databases</h2>
+    </a>
+        <div class="table-responsive">
+          <table class="table table-striped table-sm table-bordered">
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Name</th>
+                <th>Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              <xsl:for-each select="/Release/Services/Service">
+                  <xsl:variable name="serviceInfo" select="document(Path)"></xsl:variable>
+                    <xsl:call-template name="DatabaseList">
+                    <xsl:with-param name="serviceInfo" select="$serviceInfo" />
+                    <xsl:with-param name="serviceName" select="Name" />
+                    </xsl:call-template>
+                </xsl:for-each>
+            </tbody>
+          </table>
+        </div>
+</xsl:template>
+
+
+
+<xsl:template name="DatabaseList">
+    <xsl:param name="serviceInfo" />
+    <xsl:param name="serviceName" />
+
+    <xsl:for-each select="$serviceInfo/Info/Databases/Database">
+      <tr>
+        <td>
+          <xsl:value-of select="$serviceName"/>
+        </td>
+        <td>
+          <xsl:value-of select="@Name"/>.<xsl:value-of select="@Schema"/>
+        </td>
+        <td>
+          <xsl:value-of select="@SourcePath"/>
+        </td>
+      </tr>
+    </xsl:for-each>
+    <xsl:for-each select="$serviceInfo/Info/Dependencies/Resource[@Type = 'Database']">
+      <tr>
+        <td>
+          <xsl:value-of select="$serviceName"/>
+        </td>
+        <td>
+          <xsl:value-of select="@Name"/>
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+    </xsl:for-each>
+</xsl:template>
+
+<xsl:template name="AllPublishers" >
+    <a id="allpublishers">
+      <h2>All Pubished Messages</h2>
+    </a>
+    <div class="table-responsive">
+      <table class="table table-striped table-sm table-bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Messages</th>
+          </tr>
+        </thead>
+        <tbody>
+          <xsl:for-each select="/Release/Services/Service">
+            <xsl:for-each select="document(Path)">
+              <tr>
+                <td>
+                  <xsl:value-of select="/Info/Name"/>
+                </td>
+                <td>
+                  <xsl:value-of select="/Info/Interface/Publishes/Message"/>
+                </td>
+              </tr>
+            </xsl:for-each>
+          </xsl:for-each>
+
+        </tbody>
+      </table>
+    </div>
+  </xsl:template>
 
 
 

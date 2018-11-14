@@ -7,7 +7,7 @@ https://dzone.com/articles/streamlined-microservice-design-in-practice
 https://dzone.com/articles/a-readme-for-your-microservice-github-repository
 
 ## Example
-http://htmlpreview.github.io/?https://github.com/irwinhurst/Microservice-Platform-Docs/blob/master/release.html
+http://htmlpreview.github.io/?https://github.com/irwinhurst/Microservice-Platform-Docs/blob/master/Example/release.html
 
 
 
